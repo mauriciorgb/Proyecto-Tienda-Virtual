@@ -3,18 +3,20 @@
         <a routerLink="/inicio" class="brand-logo">LOGO</a>
         <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
         <ul class="right hide-on-med-and-down">
-            <li><a routerLink="/administracion/usuario">Usuario</a></li>
-            <li><a routerLink="/administracion/productos">Productos</a></li>
-            <li><a routerLink="/seguridad/identificar">Iniciar Sesion</a></li>
-            <li><a routerLink="/seguridad/registro">Registrarse</a></li>
+            <li *ngIf="seInicioSesion"><a routerLink="/administracion/usuario">Usuario</a></li>
+            <li *ngIf="seInicioSesion"><a routerLink="/administracion/productos">Productos</a></li>
+            <li *ngIf="!seInicioSesion"><a routerLink="/seguridad/identificar">Iniciar Sesion</a></li>
+            <li *ngIf="seInicioSesion"><a routerLink="/seguridad/cerrarSesion">Cerrar Sesion</a></li>
+            <li *ngIf="seInicioSesion"><a routerLink="/seguridad/registro">Registrarse</a></li>
         </ul>
     </div>
 </nav>
 
 <ul class="sidenav" id="mobile-demo">
-    <li><a routerLink="/administracion/usuario">Usuario</a></li>
-    <li><a routerLink="/administracion/productos">Productos</a></li>
-    <li><a routerLink="/seguridad/identificar">Iniciar Sesion</a></li>
-    <li><a routerLink="/seguridad/registrase">Registrarse</a></li>
+  <li *ngIf="seInicioSesion"><a routerLink="/administracion/usuario">Usuario</a></li>
+  <li *ngIf="seInicioSesion"><a routerLink="/administracion/productos">Productos</a></li>
+  <li *ngIf="!seInicioSesion"><a routerLink="/seguridad/identificar">Iniciar Sesion</a></li>
+  <li *ngIf="seInicioSesion"><a routerLink="/seguridad/cerrarSesion">Cerrar Sesion</a></li>
+  <li *ngIf="seInicioSesion"><a routerLink="/seguridad/registro">Registrarse</a></li>
 </ul>
-          
+
